@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffe4ec;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  background-color: #ff69b4;
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  background-color: #ffc0cb;
+  padding: 10px;
+}
+nav button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+}
+nav button:hover {
+  background-color: #ff1493;
+}
+
+section {
+  padding: 20px;
+}
+
+footer {
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
