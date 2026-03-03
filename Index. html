@@ -3,60 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dimple's Exercises 2026 ✨</title>
+  <title>Dimple's Nail Salon ✨</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- Header -->
   <div class="header">
-    <h1>Dimple's Exercises 2026 💅✨</h1>
-    <p>Minimal, clean, and functional</p>
+    <h1>Dimple's Nail Salon 💅✨</h1>
+    <p>Minimal, modern & sparkling</p>
   </div>
 
+  <!-- Menu Bar -->
   <div class="menu-bar">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('about')">About</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
   </div>
 
+  <!-- Slide Menu -->
   <div class="slide-menu">
     <h3>Exercises</h3>
     <ul>
-      <li><button id="btn-ex1">▶ Exercise 1</button>
-        <ul id="exercise1" class="hidden">
-          <li>Basic HTML: header, menu bar, slide menu, content, footer</li>
-        </ul>
-      </li>
-
-      <li><button id="btn-ex2">▶ Exercise 2</button>
-        <ul id="exercise2" class="hidden">
-          <li>Activity 1: First JavaScript Output</li>
-          <li>Activity 2: Variables and Data Types</li>
-          <li>Activity 3: Simple Calculator</li>
-          <li>Activity 4: User Input (prompt)</li>
-          <li>Activity 5: Conditional Statements</li>
-          <li>Activity 6: Loops (for/while)</li>
-          <li>Activity 7: JS and HTML Interaction</li>
-        </ul>
-      </li>
-
-      <li><button id="btn-ex3">▶ Exercise 3</button>
-        <ul id="exercise3" class="hidden">
-          <li>Activity 1: Change Background Color</li>
-          <li>Activity 2: Dark Mode Toggle</li>
-          <li>Activity 3: Add List Items</li>
-          <li>Activity 4: Remove Paragraph</li>
-          <li>Activity 5: Character Counter</li>
-          <li>Activity 6: Addition Calculator</li>
-          <li>Activity 7: Change Image</li>
-          <li>Activity 8: Mini To-Do List</li>
-        </ul>
-      </li>
+      <li><a href="#" onclick="showSection('exercise1')">Exercise 1: Basic HTML</a></li>
+      <li><a href="#" onclick="showSection('exercise2')">Exercise 2: JS Hands-On</a></li>
+      <li><a href="#" onclick="showSection('exercise3')">Exercise 3: Interactive Tasks</a></li>
     </ul>
   </div>
 
+  <!-- Content Sections -->
+  <div class="content" id="homeSection">
+    <h2>Welcome</h2>
+    <p>We make your nails sparkle with love and care. 💖</p>
+  </div>
+
+  <div class="content hidden" id="aboutSection">
+    <h2>About Nails</h2>
+    <p><strong>Nail Extensions:</strong> Add length and style with acrylic or gel extensions.</p>
+    <p><strong>Gel Polish:</strong> Long-lasting shine with UV-cured gel polish.</p>
+    <p><strong>Nail Care:</strong> Proper cleaning, moisturizing, and gentle filing keep nails healthy.</p>
+    <p>✨ At Dimple’s, we handle your nails with care and artistry.</p>
+  </div>
+
+  <div class="content hidden" id="contactSection">
+    <h2>Contact Us</h2>
+    <p>Email: nails@dimple.com</p>
+    <p>Phone: 123-456-7890</p>
+  </div>
+
+  <!-- Exercise Sections -->
+  <div class="content hidden" id="exercise1">
+    <h2>Exercise 1</h2>
+    <p>Basic HTML with header, menu bar, slide menu, content, and footer.</p>
+  </div>
+
+  <div class="content hidden" id="exercise2">
+    <h2>Exercise 2</h2>
+    <ul>
+      <li>Activity 1: First JavaScript Output</li>
+      <li>Activity 2: Variables and Data Types</li>
+      <li>Activity 3: Simple Calculator</li>
+      <li>Activity 4: User Input</li>
+      <li>Activity 5: Conditional Statements</li>
+      <li>Activity 6: Loops</li>
+      <li>Activity 7: JS & HTML Interaction</li>
+    </ul>
+  </div>
+
+  <div class="content hidden" id="exercise3">
+    <h2>Exercise 3</h2>
+    <ul>
+      <li>Activity 1: Change Background Color</li>
+      <li>Activity 2: Dark Mode Toggle</li>
+      <li>Activity 3: Add List Items</li>
+      <li>Activity 4: Remove Paragraph</li>
+      <li>Activity 5: Character Counter</li>
+      <li>Activity 6: Addition Calculator</li>
+      <li>Activity 7: Change Image</li>
+      <li>Activity 8: Mini To-Do List</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
   <div class="footer">
-    <p>&copy; 2026 Dimple's Site ✨</p>
+    <p>&copy; 2026 Dimple's Nail Salon ✨</p>
   </div>
 </body>
 </html>
