@@ -1,77 +1,108 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fdfdfd; /* clean neutral background */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fff;
   color: #333;
 }
 
 /* Header */
 .header {
-  background-color: #f8cdd4; /* soft baby pink */
   text-align: center;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.header h1 {
+  font-weight: 300;
+  margin: 0;
+  color: #f4a6c1;
+}
+.header p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
 }
 
-/* Menu Bar */
+/* Navigation */
 .menu-bar {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
 }
 .menu-bar a {
-  color: #333;
-  padding: 14px 20px;
+  margin: 0 15px;
   text-decoration: none;
+  color: #333;
 }
 .menu-bar a:hover {
-  background-color: #f8cdd4;
-  border-radius: 4px;
+  color: #f4a6c1;
 }
 
-/* Slide Menu */
+/* Sidebar */
 .slide-menu {
-  width: 220px;
+  width: 180px;
   float: left;
-  background-color: #fef0f2;
-  padding: 15px;
-  min-height: 500px;
-  border-right: 1px solid #ddd;
-}
-.slide-menu h3 {
-  margin-top: 0;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
 }
 .slide-menu ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 .slide-menu li {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 .slide-menu a {
   text-decoration: none;
-  color: #333;
+  color: #666;
 }
 .slide-menu a:hover {
-  color: #ff69b4;
+  color: #f4a6c1;
 }
 
 /* Content */
 .content {
-  margin-left: 240px;
-  padding: 20px;
+  margin-left: 200px;
+  padding: 30px;
+  min-height: 200px;
 }
-.hidden {
-  display: none;
+
+/* Split layout for Home + About */
+.split {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.split div {
+  flex: 1;
+}
+
+/* Outputs */
+[id^="output"], #todoList {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+/* To-do list items */
+#todoList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+#todoList button {
+  background: none;
+  border: none;
+  color: #f4a6c1;
+  cursor: pointer;
 }
 
 /* Footer */
 .footer {
-  background-color: #f8cdd4;
   text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 13px;
+  color: #999;
 }
