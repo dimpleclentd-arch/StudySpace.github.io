@@ -1,13 +1,10 @@
-// Show/hide sections
 function showSection(sectionId) {
   document.querySelectorAll('.content').forEach(sec => sec.style.display = 'none');
   document.getElementById(sectionId).style.display = 'block';
-
   if (sectionId === 'outputDemo') activity1();
   if (sectionId === 'variablesDemo') activity2();
 }
 
-// Toggle sidebar tree
 function toggleTree(id) {
   const el = document.getElementById(id);
   el.style.display = (el.style.display === 'block') ? 'none' : 'block';
@@ -29,14 +26,13 @@ function activity2() {
   document.getElementById("output2").innerHTML = `My name is ${name}, I am ${age} years old.`;
 }
 
-// DOM loaded event listeners
 document.addEventListener("DOMContentLoaded", () => {
   // Button Alert
   document.getElementById("btnClick").addEventListener("click", () => alert("Button Clicked!"));
 
   // Background Color
   document.getElementById("bgBtn").addEventListener("click", () => {
-    document.body.style.backgroundColor = "#f4a6c1";
+    document.body.style.backgroundColor = "#f48fb1";
   });
 
   // Dark Mode
