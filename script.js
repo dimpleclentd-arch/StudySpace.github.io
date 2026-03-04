@@ -1,19 +1,26 @@
+// Show/hide sections
 function showSection(sectionId) {
   document.querySelectorAll('.content').forEach(sec => sec.style.display = 'none');
   document.getElementById(sectionId).style.display = 'block';
 
-  if (sectionId === 'ex2a') activity1();
-  if (sectionId === 'ex2b') activity2();
+  if (sectionId === 'outputDemo') activity1();
+  if (sectionId === 'variablesDemo') activity2();
 }
 
-// Exercise 2 Activity 1: Output
+// Toggle sidebar tree
+function toggleTree(id) {
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+}
+
+// Activity 1: Output Demo
 function activity1() {
   alert("Welcome to JavaScript!");
   console.log("This is my first JS program.");
   document.getElementById("output1").innerHTML = "Alert + Console message shown.";
 }
 
-// Exercise 2 Activity 2: Variables
+// Activity 2: Variables Demo
 function activity2() {
   let name = "Dimple";
   let age = 20;
@@ -22,54 +29,53 @@ function activity2() {
   document.getElementById("output2").innerHTML = `My name is ${name}, I am ${age} years old.`;
 }
 
-// Exercise 2 Activity 7: Button
+// DOM loaded event listeners
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("btnClick").addEventListener("click", () => {
-    alert("Button Clicked!");
-  });
+  // Button Alert
+  document.getElementById("btnClick").addEventListener("click", () => alert("Button Clicked!"));
 
-  // Exercise 3 Activity 1: Background Color
+  // Background Color
   document.getElementById("bgBtn").addEventListener("click", () => {
     document.body.style.backgroundColor = "#f4a6c1";
   });
 
-  // Exercise 3 Activity 2: Dark Mode
+  // Dark Mode
   document.getElementById("darkBtn").addEventListener("click", () => {
     document.body.classList.toggle("dark");
   });
 
-  // Exercise 3 Activity 3: Add List Item
+  // Add List Item
   document.getElementById("addItemBtn").addEventListener("click", () => {
     let li = document.createElement("li");
     li.textContent = "New Item";
     document.getElementById("list").appendChild(li);
   });
 
-  // Exercise 3 Activity 4: Remove Paragraph
+  // Remove Paragraph
   document.getElementById("removeParaBtn").addEventListener("click", () => {
     let para = document.getElementById("para");
     if (para) para.remove();
   });
 
-  // Exercise 3 Activity 5: Character Count
+  // Character Count
   document.getElementById("charInput").addEventListener("input", () => {
     document.getElementById("charCount").textContent =
       "Characters: " + document.getElementById("charInput").value.length;
   });
 
-  // Exercise 3 Activity 6: Calculator
+  // Calculator
   document.getElementById("calcBtn").addEventListener("click", () => {
     let n1 = Number(document.getElementById("num1").value);
     let n2 = Number(document.getElementById("num2").value);
     document.getElementById("calcResult").textContent = "Sum: " + (n1 + n2);
   });
 
-  // Exercise 3 Activity 7: Change Image
+  // Change Image
   document.getElementById("imgBtn").addEventListener("click", () => {
     document.getElementById("image").src = "https://via.placeholder.com/200";
   });
 
-  // Exercise 3 Activity 8: To-Do List CRUD
+  // To-Do List CRUD
   document.getElementById("addTodoBtn").addEventListener("click", () => {
     const task = document.getElementById("todoInput").value.trim();
     if (task === "") return;
