@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   // Background Color
   const bgBtn=document.getElementById("bgBtn");
-  if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#ffe4e1"); // soft pink
+  if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#ffe4e1");
 
   // Dark Mode
   const darkBtn=document.getElementById("darkBtn");
