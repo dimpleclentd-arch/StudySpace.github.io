@@ -45,14 +45,50 @@ body {
   color: #f48fb1;
 }
 
+/* Sidebar */
+.slide-menu {
+  width: 220px;
+  float: left;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px;
+  height: 100vh;
+}
+.slide-menu ul {
+  list-style: none;
+}
+.slide-menu li {
+  margin: 8px 0;
+}
+.slide-menu a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+}
+.slide-menu a:hover {
+  color: #f48fb1;
+}
+
 /* Content */
 .content {
-  margin: 20px;
+  margin-left: 240px;
   padding: 20px;
   min-height: 60vh;
   background: #fff;
   border-radius: 6px;
+  margin: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 /* Buttons */
@@ -69,6 +105,29 @@ button:hover {
   background: #e08aa9;
 }
 
+/* To-Do List */
+#todoList {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+#todoList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+#todoList button {
+  background: transparent;
+  color: #444;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+#todoList button:hover {
+  color: #f48fb1;
+}
+
 /* Dark mode */
 .dark {
   background: #222;
@@ -77,10 +136,12 @@ button:hover {
 .dark .header,
 .dark .footer,
 .dark .menu-bar,
+.dark .slide-menu,
 .dark .content {
   background: #333;
   color: #eee;
 }
-.dark .menu-bar a {
+.dark .menu-bar a,
+.dark .slide-menu a {
   color: #eee;
 }
