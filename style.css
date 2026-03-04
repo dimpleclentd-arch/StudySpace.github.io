@@ -1,108 +1,68 @@
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #fff;
+  font-family: Arial, sans-serif;
+  background: #fff;
   color: #333;
 }
 
-/* Header */
-.header {
+.header, .footer {
   text-align: center;
-  padding: 30px;
-  border-bottom: 1px solid #e0e0e0;
-}
-.header h1 {
-  font-weight: 300;
-  margin: 0;
-  color: #f4a6c1;
-}
-.header p {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #666;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
 }
 
-/* Navigation */
 .menu-bar {
   text-align: center;
-  padding: 12px;
+  padding: 10px;
   border-bottom: 1px solid #e0e0e0;
 }
+
 .menu-bar a {
-  margin: 0 15px;
+  margin: 0 10px;
   text-decoration: none;
   color: #333;
 }
+
 .menu-bar a:hover {
   color: #f4a6c1;
 }
 
-/* Sidebar */
 .slide-menu {
-  width: 180px;
+  width: 200px;
   float: left;
-  padding: 20px;
+  padding: 15px;
   border-right: 1px solid #e0e0e0;
 }
+
 .slide-menu ul {
   list-style: none;
   padding: 0;
 }
+
 .slide-menu li {
-  margin: 12px 0;
-}
-.slide-menu a {
-  text-decoration: none;
-  color: #666;
-}
-.slide-menu a:hover {
-  color: #f4a6c1;
+  margin: 8px 0;
 }
 
-/* Content */
 .content {
-  margin-left: 200px;
-  padding: 30px;
+  margin-left: 220px;
+  padding: 20px;
   min-height: 200px;
 }
 
-/* Split layout for Home + About */
-.split {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-}
-.split div {
-  flex: 1;
-}
-
-/* Outputs */
-[id^="output"], #todoList {
-  margin-top: 15px;
-  padding: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  background-color: #fafafa;
-}
-
-/* To-do list items */
-#todoList li {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-}
-#todoList button {
-  background: none;
-  border: none;
-  color: #f4a6c1;
+button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #f4a6c1;
+  color: #fff;
   cursor: pointer;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  border-top: 1px solid #e0e0e0;
-  font-size: 13px;
-  color: #999;
+button:hover {
+  background: #d98ba9;
+}
+
+.dark {
+  background: #222;
+  color: #eee;
 }
