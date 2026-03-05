@@ -7,162 +7,166 @@
 </head>
 <body>
   <!-- Header -->
-  <div class="header">
+  <header class="header">
     <h1>StudySpace</h1>
     <p>Organize, Learn, and Succeed 🎓</p>
-  </div>
+  </header>
 
   <!-- Navigation -->
-  <div class="menu-bar">
+  <nav class="menu-bar">
     <a href="#" onclick="showSection('home')">Home</a>
     <a href="#" onclick="showSection('about')">About</a>
     <a href="#" onclick="showSection('contact')">Contact</a>
-  </div>
+  </nav>
 
-  <!-- Layout -->
+  <!-- Main container -->
   <main>
     <!-- Sidebar -->
-    <div class="slide-menu">
+    <aside class="slide-menu">
       <h3>Exercises</h3>
       <ul>
-        <!-- Exercise 1 -->
-        <li><a href="#" onclick="toggleTree('exercise1')">Exercise 1 ▸</a></li>
-        <ul id="exercise1" class="nested">
-          <li><a href="#" onclick="showSection('ex1')">Basic HTML + CSS Layout</a></li>
-        </ul>
-
-        <!-- Exercise 2 -->
-        <li><a href="#" onclick="toggleTree('exercise2')">Exercise 2 ▸</a></li>
-        <ul id="exercise2" class="nested">
-          <li><a href="#" onclick="showSection('ex2a')">Activity 1: JS Output</a></li>
-          <li><a href="#" onclick="showSection('ex2b')">Activity 2: Variables</a></li>
-          <li><a href="#" onclick="showSection('ex2c')">Activity 7: JS + HTML</a></li>
-        </ul>
-
-        <!-- Exercise 3 -->
-        <li><a href="#" onclick="toggleTree('exercise3')">Exercise 3 ▸</a></li>
-        <ul id="exercise3" class="nested">
-          <li><a href="#" onclick="showSection('ex3a')">Activity 1: Change Background</a></li>
-          <li><a href="#" onclick="showSection('ex3b')">Activity 2: Dark Mode</a></li>
-          <li><a href="#" onclick="showSection('ex3c')">Activity 3: Add List Items</a></li>
-          <li><a href="#" onclick="showSection('ex3d')">Activity 4: Remove Paragraph</a></li>
-          <li><a href="#" onclick="showSection('ex3e')">Activity 5: Character Count</a></li>
-          <li><a href="#" onclick="showSection('ex3f')">Activity 6: Addition Calculator</a></li>
-          <li><a href="#" onclick="showSection('ex3g')">Activity 7: Change Image</a></li>
-          <li><a href="#" onclick="showSection('ex3h')">Activity 8: To‑Do List</a></li>
-        </ul>
-
-        <!-- Tools -->
-        <li><a href="#" onclick="toggleTree('tools')">Tools ▸</a></li>
-        <ul id="tools" class="nested">
-          <li><a href="#" onclick="showSection('calculator')">Calculator</a></li>
-          <li><button id="darkBtn">🌙 Toggle Dark Mode</button></li>
-          <li><button id="bgBtn">🎨 Change Background</button></li>
-        </ul>
-
-        <!-- Grades -->
-        <li><a href="#" onclick="toggleTree('grades')">Grades ▸</a></li>
-        <ul id="grades" class="nested">
-          <li><a href="#" onclick="showSection('gradesSection')">Grades</a></li>
-        </ul>
+        <li>
+          <span onclick="toggleTree('ex2')">Student Basics ▸</span>
+          <ul id="ex2" class="nested">
+            <li><a href="#" onclick="showSection('variablesDemo')">Student Info</a></li>
+            <li><a href="#" onclick="showSection('calcDemo')">Fees Calculator</a></li>
+            <li><a href="#" onclick="showSection('loopsDemo')">Class Hours</a></li>
+            <li><a href="#" onclick="showSection('attendanceDemo')">Attendance Tracker</a></li>
+            <li><a href="#" onclick="showSection('subjectDemo')">Subject List</a></li>
+            <li><a href="#" onclick="showSection('gpaDemo')">GPA Calculator</a></li>
+            <li><a href="#" onclick="showSection('studyTimer')">Study Timer</a></li>
+          </ul>
+        </li>
+        <li>
+          <span onclick="toggleTree('ex3')">Tools ▸</span>
+          <ul id="ex3" class="nested">
+            <li><a href="#" onclick="showSection('calculator')">Scientific Calculator</a></li>
+            <li><a href="#" onclick="showSection('bgColor')">Background Color</a></li>
+            <li><a href="#" onclick="showSection('darkMode')">Dark Mode</a></li>
+            <li><a href="#" onclick="showSection('listAdd')">Add School Item</a></li>
+            <li><a href="#" onclick="showSection('removePara')">Remove Announcement</a></li>
+            <li><a href="#" onclick="showSection('charCount')">Essay Character Count</a></li>
+            <li><a href="#" onclick="showSection('imageChange')">Change Profile Image</a></li>
+            <li><a href="#" onclick="showSection('todo')">To‑Do List</a></li>
+          </ul>
+        </li>
+        <li>
+          <span onclick="toggleTree('ex4')">Grades ▸</span>
+          <ul id="ex4" class="nested">
+            <li><a href="#" onclick="showSection('gradeCalc')">Grade Calculator</a></li>
+          </ul>
+        </li>
       </ul>
-    </div>
+    </aside>
 
     <!-- Content Sections -->
-    <div id="home" class="content">
-      <h3>Welcome to StudySpace ✨</h3>
-      <p>This is your study hub.</p>
-    </div>
+    <section class="content" id="home"><p>Welcome to StudySpace ✨</p></section>
+    <section class="content" id="about" style="display:none;"><p>This hub helps students manage tasks, fees, and grades.</p></section>
+    <section class="content" id="contact" style="display:none;"><p>Email: studyspace@example.com</p></section>
 
-    <!-- Exercise 1 Content -->
-    <div id="ex1" class="content" style="display:none;">
-      <h3>Exercise 1: Basic HTML + CSS Layout</h3>
-      <p>Task: Create a basic webpage with header, menu bar, slide menu, content, and footer using external CSS.</p>
-    </div>
-
-    <!-- Exercise 2 Content -->
-    <div id="ex2a" class="content" style="display:none;">
-      <h3>Exercise 2: Activity 1</h3>
-      <p>Objective: Learn how JavaScript displays output.<br>
-      Use <code>alert()</code> and <code>console.log()</code> to show messages.</p>
-    </div>
-    <div id="ex2b" class="content" style="display:none;">
-      <h3>Exercise 2: Activity 2</h3>
-      <p>Objective: Variables and Data Types.<br>
-      Declare <code>name</code>, <code>age</code>, <code>isStudent</code> and display them.</p>
-    </div>
-    <div id="ex2c" class="content" style="display:none;">
-      <h3>Exercise 2: Activity 7</h3>
-      <p>Objective: Connect JavaScript with HTML.<br>
-      Add a button that shows “Button Clicked!” when pressed.</p>
-    </div>
-
-    <!-- Exercise 3 Content -->
-    <div id="ex3a" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 1</h3>
-      <p>Create a button that changes background color using <code>addEventListener()</code>.</p>
-    </div>
-    <div id="ex3b" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 2</h3>
-      <p>Create a Dark Mode toggle button.</p>
-    </div>
-    <div id="ex3c" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 3</h3>
-      <p>Add new list items when a button is clicked.</p>
-    </div>
-    <div id="ex3d" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 4</h3>
-      <p>Remove a paragraph when a button is clicked.</p>
-    </div>
-    <div id="ex3e" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 5</h3>
-      <p>Display number of characters typed in an input field.</p>
-    </div>
-    <div id="ex3f" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 6</h3>
-      <p>Create a simple addition calculator.</p>
-    </div>
-    <div id="ex3g" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 7</h3>
-      <p>Change image when a button is clicked.</p>
-    </div>
-    <div id="ex3h" class="content" style="display:none;">
-      <h3>Exercise 3: Activity 8</h3>
-      <p>Create a mini To‑Do list.</p>
-    </div>
-
-    <!-- Calculator -->
-    <div id="calculator" class="content" style="display:none;">
-      <h3>Calculator</h3>
-      <input id="calcScreen" readonly>
+    <!-- Scientific Calculator -->
+    <section class="content" id="calculator" style="display:none;">
+      <input type="text" id="calcScreen" readonly>
       <div class="calc-buttons">
+        <button onclick="press('(')">(</button>
+        <button onclick="press(')')">)</button>
+        <button onclick="press('1/')">1/x</button>
+        <button onclick="clearScreen()">C</button>
+        <button onclick="press('/')">÷</button>
+        <button onclick="press('*')">×</button>
+
+        <button onclick="press('^2')">x²</button>
+        <button onclick="press('^3')">x³</button>
+        <button onclick="press('^')">xʸ</button>
+        <button onclick="press('!')">x!</button>
+        <button onclick="press('Math.sqrt(')">√</button>
+        <button onclick="press('Math.cbrt(')">ʸ√x</button>
+
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('-')">−</button>
+        <button onclick="press('e')">e</button>
+        <button onclick="press('Math.log(')">ln</button>
+
+        <button onclick="press('Math.log10(')">lg</button>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('+')">+</button>
+
+        <button onclick="press('Math.sin(')">sin</button>
+        <button onclick="press('Math.cos(')">cos</button>
+        <button onclick="press('Math.tan(')">tan</button>
         <button onclick="press('1')">1</button>
         <button onclick="press('2')">2</button>
         <button onclick="press('3')">3</button>
-        <button onclick="press('+')">+</button>
-        <button onclick="press('-')">-</button>
         <button onclick="calculate()">=</button>
+
+        <button onclick="press('Inv')">Inv</button>
+        <button onclick="press('Rad')">Rad</button>
+        <button onclick="press('Math.PI')">π</button>
+        <button onclick="press('%')">%</button>
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
       </div>
-    </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="content" id="bgColor" style="display:none;">
+      <button id="bgBtn">Change Background</button>
+    </section>
+
+    <section class="content" id="darkMode" style="display:none;">
+      <button id="darkBtn">Toggle Dark Mode</button>
+    </section>
+
+    <section class="content" id="listAdd" style="display:none;">
+      <button id="addItemBtn">Add Item</button>
+      <ul id="list"></ul>
+    </section>
+
+    <section class="content" id="removePara" style="display:none;">
+      <p id="announcement">Announcement: Submit assignments by Friday!</p>
+      <button id="removeParaBtn">Remove Announcement</button>
+    </section>
+
+    <section class="content" id="charCount" style="display:none;">
+      <textarea id="essayInput" placeholder="Type your essay..."></textarea>
+      <p id="charCount">Characters: 0</p>
+    </section>
+
+    <section class="content" id="imageChange" style="display:none;">
+      <img id="image" src="https://via.placeholder.com/150">
+      <button id="imgBtn">Change Image</button>
+    </section>
+
+    <section class="content" id="todo" style="display:none;">
+      <input type="text" id="todoMonth" placeholder="Month">
+      <input type="text" id="todoDate" placeholder="Date">
+      <input type="text" id="todoTask" placeholder="To Do">
+      <input type="text" id="todoPriority" placeholder="Priority">
+      <input type="text" id="todoNotes" placeholder="Notes">
+      <input type="text" id="todoReminder" placeholder="Reminder">
+      <button id="addTodoBtn">Add Task</button>
+      <ul id="todoList"></ul>
+    </section>
 
     <!-- Grades -->
-    <div id="gradesSection" class="content" style="display:none;">
-      <h3>Grades</h3>
-      <input id="quiz" placeholder="Quiz %">
-      <input id="exam" placeholder="Exam %">
-      <input id="mco" placeholder="Project %">
+    <section class="content" id="gradeCalc" style="display:none;">
+      <input type="number" id="quiz" placeholder="Quiz Score">
+      <input type="number" id="exam" placeholder="Exam Score">
+      <input type="number" id="mco" placeholder="Project Score">
       <button id="calcGradeBtn">Calculate Grade</button>
       <button id="resetBtn">Reset</button>
       <div id="result"></div>
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <div class="footer">
-    <p>© 2026 StudySpace</p>
-  </div>
+  <footer class="footer"><p>&copy; 2026 StudySpace</p></footer>
 
-  <!-- Scripts -->
+  <!-- Link JS -->
   <script src="script.js"></script>
 </body>
 </html>
