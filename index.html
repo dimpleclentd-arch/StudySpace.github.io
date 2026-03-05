@@ -25,11 +25,34 @@
     <div class="slide-menu">
       <h3>Exercises</h3>
       <ul>
-        <li><a href="#" onclick="toggleTree('studentBasics')">Student Basics ▸</a></li>
-        <ul id="studentBasics" class="nested">
-          <li><a href="#" onclick="showSection('basics')">Basics</a></li>
+        <!-- Exercise 1 -->
+        <li><a href="#" onclick="toggleTree('exercise1')">Exercise 1 ▸</a></li>
+        <ul id="exercise1" class="nested">
+          <li><a href="#" onclick="showSection('ex1')">Basic HTML + CSS Layout</a></li>
         </ul>
 
+        <!-- Exercise 2 -->
+        <li><a href="#" onclick="toggleTree('exercise2')">Exercise 2 ▸</a></li>
+        <ul id="exercise2" class="nested">
+          <li><a href="#" onclick="showSection('ex2a')">Activity 1: JS Output</a></li>
+          <li><a href="#" onclick="showSection('ex2b')">Activity 2: Variables</a></li>
+          <li><a href="#" onclick="showSection('ex2c')">Activity 7: JS + HTML</a></li>
+        </ul>
+
+        <!-- Exercise 3 -->
+        <li><a href="#" onclick="toggleTree('exercise3')">Exercise 3 ▸</a></li>
+        <ul id="exercise3" class="nested">
+          <li><a href="#" onclick="showSection('ex3a')">Activity 1: Change Background</a></li>
+          <li><a href="#" onclick="showSection('ex3b')">Activity 2: Dark Mode</a></li>
+          <li><a href="#" onclick="showSection('ex3c')">Activity 3: Add List Items</a></li>
+          <li><a href="#" onclick="showSection('ex3d')">Activity 4: Remove Paragraph</a></li>
+          <li><a href="#" onclick="showSection('ex3e')">Activity 5: Character Count</a></li>
+          <li><a href="#" onclick="showSection('ex3f')">Activity 6: Addition Calculator</a></li>
+          <li><a href="#" onclick="showSection('ex3g')">Activity 7: Change Image</a></li>
+          <li><a href="#" onclick="showSection('ex3h')">Activity 8: To‑Do List</a></li>
+        </ul>
+
+        <!-- Tools -->
         <li><a href="#" onclick="toggleTree('tools')">Tools ▸</a></li>
         <ul id="tools" class="nested">
           <li><a href="#" onclick="showSection('calculator')">Calculator</a></li>
@@ -37,6 +60,7 @@
           <li><button id="bgBtn">🎨 Change Background</button></li>
         </ul>
 
+        <!-- Grades -->
         <li><a href="#" onclick="toggleTree('grades')">Grades ▸</a></li>
         <ul id="grades" class="nested">
           <li><a href="#" onclick="showSection('gradesSection')">Grades</a></li>
@@ -50,16 +74,64 @@
       <p>This is your study hub.</p>
     </div>
 
-    <div id="about" class="content" style="display:none;">
-      <h3>About</h3>
-      <p>StudySpace helps you organize and succeed.</p>
+    <!-- Exercise 1 Content -->
+    <div id="ex1" class="content" style="display:none;">
+      <h3>Exercise 1: Basic HTML + CSS Layout</h3>
+      <p>Task: Create a basic webpage with header, menu bar, slide menu, content, and footer using external CSS.</p>
     </div>
 
-    <div id="contact" class="content" style="display:none;">
-      <h3>Contact</h3>
-      <p>Get in touch with us!</p>
+    <!-- Exercise 2 Content -->
+    <div id="ex2a" class="content" style="display:none;">
+      <h3>Exercise 2: Activity 1</h3>
+      <p>Objective: Learn how JavaScript displays output.<br>
+      Use <code>alert()</code> and <code>console.log()</code> to show messages.</p>
+    </div>
+    <div id="ex2b" class="content" style="display:none;">
+      <h3>Exercise 2: Activity 2</h3>
+      <p>Objective: Variables and Data Types.<br>
+      Declare <code>name</code>, <code>age</code>, <code>isStudent</code> and display them.</p>
+    </div>
+    <div id="ex2c" class="content" style="display:none;">
+      <h3>Exercise 2: Activity 7</h3>
+      <p>Objective: Connect JavaScript with HTML.<br>
+      Add a button that shows “Button Clicked!” when pressed.</p>
     </div>
 
+    <!-- Exercise 3 Content -->
+    <div id="ex3a" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 1</h3>
+      <p>Create a button that changes background color using <code>addEventListener()</code>.</p>
+    </div>
+    <div id="ex3b" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 2</h3>
+      <p>Create a Dark Mode toggle button.</p>
+    </div>
+    <div id="ex3c" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 3</h3>
+      <p>Add new list items when a button is clicked.</p>
+    </div>
+    <div id="ex3d" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 4</h3>
+      <p>Remove a paragraph when a button is clicked.</p>
+    </div>
+    <div id="ex3e" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 5</h3>
+      <p>Display number of characters typed in an input field.</p>
+    </div>
+    <div id="ex3f" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 6</h3>
+      <p>Create a simple addition calculator.</p>
+    </div>
+    <div id="ex3g" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 7</h3>
+      <p>Change image when a button is clicked.</p>
+    </div>
+    <div id="ex3h" class="content" style="display:none;">
+      <h3>Exercise 3: Activity 8</h3>
+      <p>Create a mini To‑Do list.</p>
+    </div>
+
+    <!-- Calculator -->
     <div id="calculator" class="content" style="display:none;">
       <h3>Calculator</h3>
       <input id="calcScreen" readonly>
@@ -73,6 +145,7 @@
       </div>
     </div>
 
+    <!-- Grades -->
     <div id="gradesSection" class="content" style="display:none;">
       <h3>Grades</h3>
       <input id="quiz" placeholder="Quiz %">
