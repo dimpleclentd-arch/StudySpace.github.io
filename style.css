@@ -1,137 +1,115 @@
-/* General page styling */
+/* Base */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
-  background: url("https://pin.it/1b1GrVsvA") no-repeat center top;
-  background-size: cover; /* makes it fill the screen */
-  color: #333;
+  background: #fff9fb; /* soft pink background */
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Banner Image */
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* Header */
 .header {
   text-align: center;
-  background: #ffd6e8; /* lighter pink */
-  padding: 20px;
+  background: #ffe3ec;
+  padding: 30px 20px;
 }
 .header h1 {
   margin: 0;
-  color: #cc3366;
+  font-size: 2rem;
+  color: #b03060;
 }
 .header p {
-  margin: 5px 0 0;
+  margin: 8px 0 0;
   font-style: italic;
+  color: #666;
 }
 
-/* Navigation bar */
+/* Navigation */
 .menu-bar {
   display: flex;
   justify-content: center;
-  background: #ffb6d4;
-  padding: 10px;
+  background: #ffc1d6;
+  padding: 12px;
+  border-bottom: 1px solid #f0cbd6;
 }
 .menu-bar a {
-  margin: 0 15px;
+  margin: 0 20px;
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 .menu-bar a:hover {
-  color: #cc3366;
+  color: #b03060;
 }
 
 /* Layout */
 main {
   display: flex;
+  min-height: 80vh;
 }
 .slide-menu {
-  width: 200px;
-  background: #ffd6e8;
-  padding: 15px;
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #f0cbd6;
+  padding: 20px;
 }
 .slide-menu h3 {
   margin-top: 0;
+  font-size: 1.1rem;
+  color: #b03060;
 }
 .slide-menu ul {
   list-style: none;
   padding: 0;
 }
 .slide-menu li {
-  margin: 5px 0;
+  margin: 8px 0;
 }
 .slide-menu a {
   text-decoration: none;
-  color: #333;
+  color: #444;
+  transition: color 0.2s;
 }
 .slide-menu a:hover {
-  color: #cc3366;
+  color: #b03060;
 }
 .nested {
   display: none;
   margin-left: 15px;
 }
 
-/* Content area */
+/* Content cards */
 .content {
   flex: 1;
-  padding: 20px;
+  padding: 25px;
   background: #fff;
-  margin: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.content h3 {
+  margin-top: 0;
+  color: #b03060;
 }
 
 /* Footer */
 .footer {
   text-align: center;
-  background: #ffd6e8;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-/* Calculator styling */
-#calcScreen {
-  width: 100%;
-  padding: 12px;
-  font-size: 18px;
-  margin-bottom: 12px;
-  text-align: right;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #fff;
-}
-
-.calc-buttons {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 buttons per row */
-  gap: 8px;
-}
-.calc-buttons button {
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  background: #ffb6d4;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.2s;
-}
-.calc-buttons button:hover {
-  background: #cc3366;
-  color: #fff;
-}
-
-/* Dark mode */
-body.dark {
-  background: #222;
-  color: #eee;
-}
-body.dark .header,
-body.dark .menu-bar,
-body.dark .slide-menu,
-body.dark .footer {
-  background: #444;
-  color: #eee;
-}
-body.dark .content {
-  background: #333;
-  color: #eee;
+  background: #ffe3ec;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #666;
 }
