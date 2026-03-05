@@ -19,12 +19,6 @@
     <a href="#" onclick="showSection('contact')">Contact</a>
   </div>
 
-  <!-- Tools (Dark Mode + Background Change) -->
-  <div style="text-align:center; margin:15px;">
-    <button id="darkBtn">🌙 Toggle Dark Mode</button>
-    <button id="bgBtn">🎨 Change Background</button>
-  </div>
-
   <!-- Layout -->
   <main>
     <!-- Sidebar -->
@@ -35,10 +29,14 @@
         <ul id="studentBasics" class="nested">
           <li><a href="#" onclick="showSection('basics')">Basics</a></li>
         </ul>
+
         <li><a href="#" onclick="toggleTree('tools')">Tools ▸</a></li>
         <ul id="tools" class="nested">
           <li><a href="#" onclick="showSection('calculator')">Calculator</a></li>
+          <li><button id="darkBtn">🌙 Toggle Dark Mode</button></li>
+          <li><button id="bgBtn">🎨 Change Background</button></li>
         </ul>
+
         <li><a href="#" onclick="toggleTree('grades')">Grades ▸</a></li>
         <ul id="grades" class="nested">
           <li><a href="#" onclick="showSection('gradesSection')">Grades</a></li>
