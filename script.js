@@ -7,10 +7,6 @@ function showSection(id){
   const section=document.getElementById(id);
   section.style.display='block';
   setTimeout(()=>section.style.opacity=1,50);
-
-  if(id==='variablesDemo') variablesDemo();
-  if(id==='calcDemo') calcDemo();
-  if(id==='loopsDemo') loopsDemo();
 }
 
 // Toggle sidebar tree
