@@ -113,3 +113,21 @@ main {
   font-size: 0.9rem;
   color: #666;
 }
+
+body.dark {
+  background: #1e1e1e;
+  color: #eee;
+}
+body.dark .header {
+  background: linear-gradient(135deg, #444, #222);
+}
+body.dark .menu-bar,
+body.dark .slide-menu,
+body.dark .footer {
+  background: #2a2a2a;
+  color: #eee;
+}
+body.dark .content {
+  background: #2e2e2e;
+  color: #eee;
+}
