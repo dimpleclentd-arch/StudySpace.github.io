@@ -32,6 +32,10 @@
             <li><a href="#" onclick="showSection('variablesDemo')">Student Info</a></li>
             <li><a href="#" onclick="showSection('calcDemo')">Fees Calculator</a></li>
             <li><a href="#" onclick="showSection('loopsDemo')">Class Hours</a></li>
+            <li><a href="#" onclick="showSection('attendanceDemo')">Attendance Tracker</a></li>
+            <li><a href="#" onclick="showSection('subjectDemo')">Subject List</a></li>
+            <li><a href="#" onclick="showSection('gpaDemo')">GPA Calculator</a></li>
+            <li><a href="#" onclick="showSection('studyTimer')">Study Timer</a></li>
           </ul>
         </li>
         <li>
@@ -61,61 +65,44 @@
     <section class="content" id="about" style="display:none;"><p>This hub helps students manage tasks, fees, and grades.</p></section>
     <section class="content" id="contact" style="display:none;"><p>Email: studyspace@example.com</p></section>
 
-    <!-- Scientific Calculator -->
-    <section class="content" id="calculator" style="display:none;">
-      <input type="text" id="calcScreen" readonly>
-      <div class="calc-buttons">
-        <!-- Row 1 -->
-        <button onclick="press('(')">(</button>
-        <button onclick="press(')')">)</button>
-        <button onclick="press('1/x')">1/x</button>
-        <button onclick="clearScreen()">C</button>
-        <!-- Row 2 -->
-        <button onclick="press('MC')">MC</button>
-        <button onclick="press('M+')">M+</button>
-        <button onclick="press('M-')">M-</button>
-        <button onclick="press('MR')">MR</button>
-        <!-- Row 3 -->
-        <button onclick="press('x²')">x²</button>
-        <button onclick="press('x³')">x³</button>
-        <button onclick="press('^')">xʸ</button>
-        <button onclick="press('⌫')">⌫</button>
-        <!-- Row 4 -->
-        <button onclick="press('x!')">x!</button>
-        <button onclick="press('√')">√</button>
-        <button onclick="press('∛')">∛</button>
-        <button onclick="press('/')">÷</button>
-        <!-- Row 5 -->
-        <button onclick="press('e')">e</button>
-        <button onclick="press('ln')">ln</button>
-        <button onclick="press('lg')">lg</button>
-        <button onclick="press('*')">×</button>
-        <!-- Row 6 -->
-        <button onclick="press('sin')">sin</button>
-        <button onclick="press('cos')">cos</button>
-        <button onclick="press('tan')">tan</button>
-        <button onclick="press('-')">−</button>
-        <!-- Row 7 -->
-        <button onclick="press('π')">π</button>
-        <button onclick="press('%')">%</button>
-        <button onclick="press('.')">.</button>
-        <button onclick="press('+')">+</button>
-        <!-- Row 8 -->
-        <button onclick="press('7')">7</button>
-        <button onclick="press('8')">8</button>
-        <button onclick="press('9')">9</button>
-        <button onclick="calculate()">=</button>
-        <!-- Row 9 -->
-        <button onclick="press('4')">4</button>
-        <button onclick="press('5')">5</button>
-        <button onclick="press('6')">6</button>
-        <!-- Row 10 -->
-        <button onclick="press('1')">1</button>
-        <button onclick="press('2')">2</button>
-        <button onclick="press('3')">3</button>
-        <!-- Row 11 -->
-        <button onclick="press('0')">0</button>
-      </div>
+    <!-- Tools -->
+    <section class="content" id="bgColor" style="display:none;">
+      <button id="bgBtn">Change Background</button>
+    </section>
+
+    <section class="content" id="darkMode" style="display:none;">
+      <button id="darkBtn">Toggle Dark Mode</button>
+    </section>
+
+    <section class="content" id="listAdd" style="display:none;">
+      <button id="addItemBtn">Add Item</button>
+      <ul id="list"></ul>
+    </section>
+
+    <section class="content" id="removePara" style="display:none;">
+      <p id="announcement">Announcement: Submit assignments by Friday!</p>
+      <button id="removeParaBtn">Remove Announcement</button>
+    </section>
+
+    <section class="content" id="charCount" style="display:none;">
+      <textarea id="essayInput" placeholder="Type your essay..."></textarea>
+      <p id="charCount">Characters: 0</p>
+    </section>
+
+    <section class="content" id="imageChange" style="display:none;">
+      <img id="image" src="https://via.placeholder.com/150">
+      <button id="imgBtn">Change Image</button>
+    </section>
+
+    <section class="content" id="todo" style="display:none;">
+      <input type="text" id="todoMonth" placeholder="Month">
+      <input type="text" id="todoDate" placeholder="Date">
+      <input type="text" id="todoTask" placeholder="To Do">
+      <input type="text" id="todoPriority" placeholder="Priority">
+      <input type="text" id="todoNotes" placeholder="Notes">
+      <input type="text" id="todoReminder" placeholder="Reminder">
+      <button id="addTodoBtn">Add Task</button>
+      <ul id="todoList"></ul>
     </section>
   </main>
 
