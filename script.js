@@ -5,14 +5,18 @@ function showSection(id){
     sec.style.opacity=0;
   });
   const section=document.getElementById(id);
-  section.style.display='block';
-  setTimeout(()=>section.style.opacity=1,50);
+  if(section){
+    section.style.display='block';
+    setTimeout(()=>section.style.opacity=1,50);
+  }
 }
 
 // Toggle sidebar tree
 function toggleTree(id){
   const el=document.getElementById(id);
-  el.style.display=(el.style.display==='block')?'none':'block';
+  if(el){
+    el.style.display=(el.style.display==='block')?'none':'block';
+  }
 }
 
 /* ---------------- Tools ---------------- */
