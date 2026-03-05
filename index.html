@@ -36,34 +36,56 @@
     <li><a href="#" onclick="showSection('gpaDemo')">GPA Calculator</a></li>
     <li><a href="#" onclick="showSection('studyTimer')">Study Timer</a></li>
   </ul>
-</li>
-<!-- Content Sections for Exercise 2 -->
+<!-- Exercise 2: Student Basics Sections -->
 <section class="content" id="variablesDemo" style="display:none;">
-  <p>Enter student info here...</p>
+  <h3>Student Info</h3>
+  <form>
+    <label>Name:</label>
+    <input type="text" placeholder="Enter name"><br><br>
+    <label>Age:</label>
+    <input type="number" placeholder="Enter age"><br><br>
+    <label>Course:</label>
+    <input type="text" placeholder="Enter course"><br><br>
+    <button type="button">Save Info</button>
+  </form>
 </section>
-
 <section class="content" id="calcDemo" style="display:none;">
-  <p>Fees calculator section...</p>
+  <h3>Fees Calculator</h3>
+  <input type="number" id="tuition" placeholder="Tuition Fee"><br><br>
+  <input type="number" id="misc" placeholder="Miscellaneous Fee"><br><br>
+  <button type="button" onclick="alert('Total: '+(Number(tuition.value)+Number(misc.value)))">Calculate</button>
 </section>
 
 <section class="content" id="loopsDemo" style="display:none;">
-  <p>Class hours section...</p>
+  <h3>Class Hours</h3>
+  <p>Track your class hours here.</p>
 </section>
 
 <section class="content" id="attendanceDemo" style="display:none;">
-  <p>Attendance tracker section...</p>
+  <h3>Attendance Tracker</h3>
+  <p>Mark attendance here.</p>
 </section>
 
 <section class="content" id="subjectDemo" style="display:none;">
-  <p>Subject list section...</p>
+  <h3>Subject List</h3>
+  <ul>
+    <li>Math</li>
+    <li>Science</li>
+    <li>English</li>
+  </ul>
 </section>
 
 <section class="content" id="gpaDemo" style="display:none;">
-  <p>GPA calculator section...</p>
+  <h3>GPA Calculator</h3>
+  <input type="number" id="grade1" placeholder="Subject 1"><br><br>
+  <input type="number" id="grade2" placeholder="Subject 2"><br><br>
+  <input type="number" id="grade3" placeholder="Subject 3"><br><br>
+  <button type="button" onclick="alert('GPA: '+((Number(grade1.value)+Number(grade2.value)+Number(grade3.value))/3).toFixed(2))">Calculate GPA</button>
 </section>
 
 <section class="content" id="studyTimer" style="display:none;">
-  <p>Study timer section...</p>
+  <h3>Study Timer</h3>
+  <button type="button" onclick="alert('Timer started!')">Start Timer</button>
 </section>
         <li>
           <span onclick="toggleTree('ex3')">Tools ▸</span>
