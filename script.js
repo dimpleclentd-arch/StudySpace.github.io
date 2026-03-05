@@ -28,14 +28,13 @@ function variablesDemo(){
     return;
   }
 
-  // Show submitted info
   let output=document.getElementById("output2");
   output.innerHTML=`<strong>Student Record</strong><br>
                     Name: ${name}<br>
                     Age: ${age}<br>
                     Course: ${course}`;
 
-  // Clear inputs after submit
+  // Clear inputs
   document.getElementById("studentName").value="";
   document.getElementById("studentAge").value="";
   document.getElementById("studentCourse").value="";
@@ -75,7 +74,7 @@ function loopsDemo(){
 /* ---------------- Student Tools ---------------- */
 document.addEventListener("DOMContentLoaded",()=>{
 
-  // Background Color (whole page)
+  // Background Color
   const bgBtn=document.getElementById("bgBtn");
   if(bgBtn) bgBtn.addEventListener("click",()=>document.body.style.background="#fff5f8");
 
@@ -86,7 +85,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   // Add School Item
   const addItemBtn=document.getElementById("addItemBtn");
   if(addItemBtn) addItemBtn.addEventListener("click",()=>{
-    let item=prompt("Enter school item to buy/pay:");
+    let item=prompt("Enter school item:");
     if(item){
       let li=document.createElement("li");
       li.textContent=item;
@@ -110,11 +109,11 @@ document.addEventListener("DOMContentLoaded",()=>{
   // Profile Image Change
   const imgBtn=document.getElementById("imgBtn");
   if(imgBtn) imgBtn.addEventListener("click",()=>{
-    let url=prompt("Enter image URL for your profile/notes:");
+    let url=prompt("Enter image URL:");
     if(url) document.getElementById("image").src=url;
   });
 
-  // To-Do List Expanded (Month, Date, Task, Priority, Notes, Reminder)
+  // To-Do List
   const addTodoBtn=document.getElementById("addTodoBtn");
   if(addTodoBtn) addTodoBtn.addEventListener("click",()=>{
     const month=todoMonth.value, date=todoDate.value, task=todoTask.value,
@@ -132,7 +131,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   });
 });
 
-/* ---------------- Calculator Keypad ---------------- */
+/* ---------------- Calculator ---------------- */
 function press(val){document.getElementById("calcScreen").value+=val;}
 function calculate(){
   let exp=document.getElementById("calcScreen").value;
@@ -143,7 +142,7 @@ function calculate(){
   }
 }
 
-/* ---------------- Student Grades ---------------- */
+/* ---------------- Grades ---------------- */
 document.addEventListener("DOMContentLoaded",()=>{
   let history=[];
   const calcGradeBtn=document.getElementById("calcGradeBtn");
