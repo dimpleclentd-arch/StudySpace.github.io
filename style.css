@@ -44,6 +44,7 @@ body.dark-mode {
   /* Added: Center the header block itself */
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Banner Image */
