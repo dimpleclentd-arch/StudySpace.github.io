@@ -34,11 +34,15 @@ body.dark-mode {
 
 /* ==================== HEADER WITH BANNER IMAGE ==================== */
 .header {
-
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  padding: 500px;
+  /* Changed padding from 500px to a reasonable 40px */
+  padding: 40px 20px; 
   overflow: hidden;
-  margin-left: 500px;
+  /* Removed margin-left: 500px */
+  
+  /* Added these lines to center the header block itself */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Banner Image */
