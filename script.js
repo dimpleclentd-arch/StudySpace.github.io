@@ -206,7 +206,9 @@ function calcFees() {
   // Remove a quiz input field
   function removeQuizInput(id) {
     const inputGroup = document.getElementById(`quizScore${id}`).parentElement;
-    inputGroup.remove();
+    if (inputGroup) {
+      inputGroup.remove();
+    }
   }
 
   // Calculate the average grade
@@ -222,3 +224,12 @@ function calcFees() {
         count++;
       }
     });
+
+    if (count > 0) {
+      const average = totalScore / count;
+      document.getElementById("gradeResult").textContent = "Average Grade: " + average.toFixed(2);
+    } else {
+      document.getElementById("gradeResult").textContent = "Please enter scores to calculate.";
+    }
+  }
+</script>
