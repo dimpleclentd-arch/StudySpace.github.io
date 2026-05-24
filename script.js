@@ -1,11 +1,16 @@
 /* ==================== NAVIGATION ==================== */
 function showSection(id) {
+  // Hide all sections
   document.querySelectorAll('.content').forEach(sec => {
+    sec.classList.remove('active');
     sec.style.display = 'none';
   });
+  
+  // Show selected section
   const section = document.getElementById(id);
   if (section) {
     section.style.display = 'block';
+    section.classList.add('active');
   }
 }
 
@@ -32,42 +37,35 @@ function clearScreen() {
 function factorial(n) {
   if (n < 0) return NaN;
   if (n === 0 || n === 1) return 1;
-  return n * factorial(n - 1);
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
 }
 
 function calculate() {
   let exp = document.getElementById("calcScreen").value;
   try {
-    // Replace special symbols with Math functions
-    exp = exp.replace(/π/g, "Math.PI")
-             .replace(/e/g, "Math.E")
-             .replace(/sin\$/g, "Math.sin(")
-             .replace(/cos\$/g, "Math.cos(")
-             .replace(/tan\$/g, "Math.tan(")
-             .replace(/log\$/g, "Math.log10(")
-             .replace(/ln\$/g, "Math.log(")
-             .replace(/sqrt\$/g, "Math.sqrt(")
-             .replace(/cbrt\$/g, "Math.cbrt(");
-
-    // Handle power operations
-    exp = exp.replace(/\^2/g, "**2")
-             .replace(/\^3/g, "**3")
-             .replace(/\^/g, "**");
-
+    // Handle pi
+    exp = exp.replace(/π/g, "Math.PI");
+    
+    // Handle e (Euler's number)
+    exp = exp.replace(/e(?![xp])/g, "Math.E");
+    
+    // Handle power operations (^ to **)
+    exp = exp.replace(/\^/g, "**");
+    
     // Handle factorial
     if (exp.includes("!")) {
-      exp = exp.replace(/(\d+)!/g, (match, num) => factorial(parseInt(num)));
+      exp = exp.replace(/(\d+)!/g, function(match, num) {
+        return factorial(parseInt(num));
+      });
     }
-
-    // Handle percentage
+    
+    // Handle percentages (e.g., 50% = 0.5)
     exp = exp.replace(/(\d+)%/g, "($1/100)");
-
-    // Handle 1/x
-    exp = exp.replace(/1\/(\d+)/g, "1/$1");
-
-    // Handle negative sign
-    exp = exp.replace(/±(\d+)/g, "-$1");
-
+    
     let result = eval(exp);
     
     // Round to avoid floating point errors
@@ -83,156 +81,239 @@ function calculate() {
   }
 }
 
-/* ==================== TOOLS ==================== */
-document.addEventListener("DOMContentLoaded", () => {
-  
-  // Background Color
-  const bgBtn = document.getElementById("bgBtn");
-  if (bgBtn) {
-    bgBtn.addEventListener("click", () => {
-      const colors = ["#fff5f8", "#e0f7fa", "#fff3e0", "#e8f5e9", "#f3e5f5"];
-      document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
-    });
-  }
-
-  // Dark Mode
-  const darkBtn = document.getElementById("darkBtn");
-  if (darkBtn) {
-    darkBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-    });
-  }
-
-  // Add School Item
-  const addItemBtn = document.getElementById("addItemBtn");
-  if (addItemBtn) {
-    addItemBtn.addEventListener("click", () => {
-      const item = prompt("Enter school item:");
-      if (item) {
-        const li = document.createElement("li");
-        li.textContent = item;
-        document.getElementById("list").appendChild(li);
-      }
-    });
-  }
-
-  // Reminder Manager
-  const addReminderBtn = document.getElementById("addReminderBtn");
-  if (addReminderBtn) {
-    addReminderBtn.addEventListener("click", () => {
-      const reminder = document.getElementById("reminderInput").value;
-      if (reminder) {
-        const li = document.createElement("li");
-        li.textContent = reminder;
-        document.getElementById("reminderList").appendChild(li);
-        document.getElementById("reminderInput").value = "";
-      }
-    });
-  }
-
-  // Character Count (Study Notes)
-  const essayInput = document.getElementById("essayInput");
-  if (essayInput) {
-    essayInput.addEventListener("input", () => {
-      const count = essayInput.value.length;
-      document.getElementById("charCount").textContent = "Characters: " + count;
-    });
-  }
-
-  // Change Profile Image (5 Images)
-  const nextImgBtn = document.getElementById("nextImgBtn");
-  const image = document.getElementById("image");
-
-  const profileImages = [
-    "images/profile1.jpg",
-    "images/profile2.jpg",
-    "images/profile3.jpg",
-    "images/profile4.jpg",
-    "images/profile5.jpg"
-  ];
-
-  let currentImageIndex = 0;
-
-  if (nextImgBtn) {
-    nextImgBtn.addEventListener("click", () => {
-      currentImageIndex = (currentImageIndex + 1) % profileImages.length;
-      image.src = profileImages[currentImageIndex];
-    });
-  }
-
-  // To-Do List
-  const addTodoBtn = document.getElementById("addTodoBtn");
-  if (addTodoBtn) {
-    addTodoBtn.addEventListener("click", () => {
-      const month = document.getElementById("todoMonth").value;
-      const date = document.getElementById("todoDate").value;
-      const task = document.getElementById("todoTask").value;
-      const priority = document.getElementById("todoPriority").value;
-      const notes = document.getElementById("todoNotes").value;
-      const reminder = document.getElementById("todoReminder").value;
-
-      if (task === "") {
-        alert("Please enter a task!");
-        return;
-      }
-
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <strong>${month} ${date}</strong>: ${task}<br>
-        <small>Priority: ${priority} | Notes: ${notes} | Reminder: ${reminder}</small>
-      `;
-      document.getElementById("todoList").appendChild(li);
-
-      document.getElementById("todoTask").value = "";
-      document.getElementById("todoPriority").value = "";
-      document.getElementById("todoNotes").value = "";
-      document.getElementById("todoReminder").value = "";
-    });
-  }
-});
-
 /* ==================== STUDENT BASICS ==================== */
 function updateStudent() {
   const name = prompt("Enter new name:");
   const age = prompt("Enter new age:");
+  const id = prompt("Enter new student ID:");
+  
   if (name) document.getElementById("studentName").textContent = name;
   if (age) document.getElementById("studentAge").textContent = age;
+  if (id) document.getElementById("studentId").textContent = id;
 }
 
 function calcFees() {
   const tuition = parseFloat(document.getElementById("tuition").value) || 0;
   const misc = parseFloat(document.getElementById("misc").value) || 0;
   const total = tuition + misc;
-  document.getElementById("feesResult").textContent = "Total Fees: $" + total.toFixed(2);
+  document.getElementById("feesResult").innerHTML = `
+    <p><strong>Tuition: $${tuition.toFixed(2)}</strong></p>
+    <p><strong>Misc: $${misc.toFixed(2)}</strong></p>
+    <p><strong>Total: $${total.toFixed(2)}</strong></p>
+  `;
 }
+
+/* ==================== STUDY TIMER ==================== */
+let timerInterval;
+let timeLeft = 25 * 60; // 25 minutes in seconds
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  document.getElementById("timer").textContent = 
+    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function startTimer() {
+  if (timerInterval) return;
+  timerInterval = setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft--;
+      updateTimerDisplay();
+    } else {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      alert("Time's up! Take a break.");
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+}
+
+function resetTimer() {
+  pauseTimer();
+  timeLeft = 25 * 60;
+  updateTimerDisplay();
+}
+
+/* ==================== GPA CALCULATOR ==================== */
+function addGpaRow() {
+  const container = document.getElementById('gpaInputs');
+  const row = document.createElement('div');
+  row.className = 'gpa-row';
+  row.innerHTML = `
+    <input type="text" placeholder="Subject" class="subject">
+    <input type="number" placeholder="Credits" class="credits" min="1" max="6">
+    <input type="number" placeholder="Grade (0-100)" class="grade" min="0" max="100">
+  `;
+  container.appendChild(row);
+}
+
+function calcGpa() {
+  const rows = document.querySelectorAll('.gpa-row');
+  let totalPoints = 0;
+  let totalCredits = 0;
+  
+  rows.forEach(row => {
+    const credits = parseFloat(row.querySelector('.credits').value) || 0;
+    const grade = parseFloat(row.querySelector('.grade').value) || 0;
+    
+    if (credits > 0 && grade >= 0) {
+      // Convert grade (0-100) to grade points (0-4)
+      const gradePoints = (grade / 100) * 4;
+      totalPoints += gradePoints * credits;
+      totalCredits += credits;
+    }
+  });
+  
+  const gpa = totalCredits > 0 ? (totalPoints / totalCredits).toFixed(2) : "0.00";
+  document.getElementById('gpaResult').innerHTML = `
+    <p><strong>GPA: ${gpa} / 4.00</strong></p>
+    <p><small>Total Credits: ${totalCredits}</small></p>
+  `;
+}
+
+/* ==================== TOOLS ==================== */
+
+// Background Color Changer
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // Background Color
+  const bgBtn = document.getElementById("bgBtn");
+  if (bgBtn) {
+    bgBtn.addEventListener("click", function() {
+      const colors = [
+        "linear-gradient(135deg, #fff5f8 0%, #ffeef5 100%)",
+        "linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%)",
+        "linear-gradient(135deg, #fff3e0 0%, #ffecb3 100%)",
+        "linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%)",
+        "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%)",
+        "linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%)",
+        "linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%)",
+        "linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%)"
+      ];
+      const colorNames = ["Pink", "Cyan", "Amber", "Green", "Purple", "Blue", "Orange", "Teal"];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      document.body.style.background = colors[randomIndex];
+      // Store preference
+      localStorage.setItem('bgColor', colors[randomIndex]);
+    });
+    
+    // Restore saved background
+    const savedBg = localStorage.getItem('bgColor');
+    if (savedBg) {
+      document.body.style.background = savedBg;
+    }
+  }
+
+  // Dark Mode Toggle
+  const darkBtn = document.getElementById("darkBtn");
+  if (darkBtn) {
+    darkBtn.addEventListener("click", function() {
+      document.body.classList.toggle("dark-mode");
+      // Store preference
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+    
+    // Restore saved preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+  }
+
+  // Study Notes Character Count
+  const essayInput = document.getElementById("essayInput");
+  if (essayInput) {
+    essayInput.addEventListener("input", function() {
+      const count = essayInput.value.length;
+      document.getElementById("charCount").textContent = "Characters: " + count;
+    });
+    // Restore saved notes
+    const savedNotes = localStorage.getItem('studyNotes');
+    if (savedNotes) {
+      essayInput.value = savedNotes;
+      document.getElementById("charCount").textContent = "Characters: " + savedNotes.length;
+    }
+    // Save notes on input
+    essayInput.addEventListener("input", function() {
+      localStorage.setItem('studyNotes', essayInput.value);
+    });
+  }
+
+  // Add School Item
+  const itemInput = document.getElementById("itemInput");
+  if (itemInput) {
+    // Add item function
+    window.addItem = function() {
+      const input = document.getElementById("itemInput");
+      const item = input.value.trim();
+      if (item) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        document.getElementById("schoolList").appendChild(li);
+        input.value = "";
+      }
+    };
+  }
+
+  // Reminder Manager
+  window.addReminder = function() {
+    const input = document.getElementById("reminderInput");
+    const reminder = input.value.trim();
+    if (reminder) {
+      const li = document.createElement("li");
+      li.innerHTML = reminder + ' <span style="float:right;cursor:pointer;" onclick="this.parentElement.remove()">✕</span>';
+      document.getElementById("reminderList").appendChild(li);
+      input.value = "";
+    }
+  };
+
+  // To-Do List
+  window.addTodo = function() {
+    const task = document.getElementById("todoTask").value.trim();
+    const priority = document.getElementById("todoPriority").value;
+    
+    if (task) {
+      const li = document.createElement("li");
+      const priorityColors = {
+        'Low': '#27ae60',
+        'Medium': '#f39c12',
+        'High': '#e74c3c'
+      };
+      li.innerHTML = `
+        <span style="border-left: 4px solid ${priorityColors[priority]}">${task}</span>
+        <small style="color: ${priorityColors[priority]}"> - ${priority} Priority</small>
+        <span style="float:right;cursor:pointer;" onclick="this.parentElement.remove()">✕</span>
+      `;
+      document.getElementById("todoList").appendChild(li);
+      document.getElementById("todoTask").value = "";
+    }
+  };
+
+});
 
 /* ==================== DYNAMIC GRADE CALCULATOR ==================== */
 let quizCount = 0;
 
-// Add a new quiz input field dynamically
 function addQuizInput() {
   quizCount++;
-  const quizContainer = document.getElementById('quizInputs');
-  
+  const container = document.getElementById('quizInputs');
   const inputGroup = document.createElement('div');
   inputGroup.className = 'quiz-input-group';
   inputGroup.innerHTML = `
-    <input type="number" id="quizScore${quizCount}" placeholder="Quiz ${quizCount} Score" min="0" max="100" />
-    <button class="remove-btn" onclick="removeQuizInput(${quizCount})">Remove</button>
+    <input type="number" id="quizScore${quizCount}" placeholder="Quiz ${quizCount} Score" min="0" max="100">
+    <button class="remove-btn" onclick="removeQuizInput(this)">✕</button>
   `;
-  
-  quizContainer.appendChild(inputGroup);
+  container.appendChild(inputGroup);
 }
 
-// Remove a quiz input field
-function removeQuizInput(id) {
-  const inputGroup = document.getElementById(`quizScore${id}`).parentElement;
-  if (inputGroup) {
-    inputGroup.remove();
-  }
+function removeQuizInput(btn) {
+  btn.parentElement.remove();
 }
 
-// Calculate the average grade from all inputs
 function calculateGrade() {
   // Get quiz scores
   const inputs = document.querySelectorAll('.quiz-input-group input');
@@ -251,37 +332,65 @@ function calculateGrade() {
   const exam = parseFloat(document.getElementById("exam").value) || 0;
   const project = parseFloat(document.getElementById("project").value) || 0;
 
-  // Calculate total and average
+  // Calculate totals
+  const quizMax = quizCount * 100;
   const totalScore = quizTotal + exam + project;
-  const maxScore = (quizCount * 100) + 100 + 100;
-  const percentage = (totalScore / maxScore) * 100;
+  const maxScore = quizMax + 100 + 100;
+  const percentage = maxScore > 0 ? (totalScore / maxScore) * 100 : 0;
   
+  // Determine letter grade
   let grade = "F";
-  if (percentage >= 90) grade = "A";
-  else if (percentage >= 80) grade = "B";
-  else if (percentage >= 70) grade = "C";
-  else if (percentage >= 60) grade = "D";
+  let gradeColor = "#e74c3c";
+  if (percentage >= 90) { grade = "A"; gradeColor = "#27ae60"; }
+  else if (percentage >= 80) { grade = "B"; gradeColor = "#2ecc71"; }
+  else if (percentage >= 70) { grade = "C"; gradeColor = "#f39c12"; }
+  else if (percentage >= 60) { grade = "D"; gradeColor = "#e67e22"; }
   
   document.getElementById("gradeResult").innerHTML = `
-    <p><strong>Quiz Total: ${quizTotal}/${quizCount * 100}</strong></p>
+    <p><strong>Quiz Total: ${quizTotal}/${quizMax}</strong></p>
     <p><strong>Exam: ${exam}/100</strong></p>
     <p><strong>Project: ${project}/100</strong></p>
+    <hr style="margin: 10px 0; border: 1px solid var(--primary-light);">
     <p><strong>Total: ${totalScore}/${maxScore}</strong></p>
     <p><strong>Percentage: ${percentage.toFixed(2)}%</strong></p>
-    <p><strong>Grade: ${grade}</strong></p>
+    <p style="font-size: 1.5rem; color: ${gradeColor};">
+      <strong>Grade: ${grade}</strong>
+    </p>
   `;
 }
 
-// Reset all quiz inputs
 function resetQuiz() {
   quizCount = 0;
   document.getElementById('quizInputs').innerHTML = '';
   document.getElementById("exam").value = "";
   document.getElementById("project").value = "";
   document.getElementById("gradeResult").innerHTML = '';
+  addQuizInput(); // Re-initialize with one quiz input
 }
 
-// Initialize with one quiz input
-document.addEventListener("DOMContentLoaded", () => {
+// Initialize with one quiz input on page load
+document.addEventListener("DOMContentLoaded", function() {
   addQuizInput();
+});
+
+/* ==================== KEYBOARD SUPPORT ==================== */
+document.addEventListener("keydown", function(e) {
+  // Calculator keyboard support
+  if (document.activeElement.tagName !== "INPUT" && 
+      document.activeElement.tagName !== "TEXTAREA") {
+    
+    const key = e.key;
+    const validKeys = "0123456789+-*/().";
+    
+    if (validKeys.includes(key)) {
+      press(key);
+    } else if (key === "Enter") {
+      calculate();
+    } else if (key === "Escape") {
+      clearScreen();
+    } else if (key === "Backspace") {
+      calcExpression = calcExpression.slice(0, -1);
+      document.getElementById("calcScreen").value = calcExpression;
+    }
+  }
 });
