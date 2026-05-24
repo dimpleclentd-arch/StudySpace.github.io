@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="header-content">
@@ -17,46 +18,44 @@
 
   <!-- Navigation -->
   <nav class="menu-bar">
-    <a href="#" onclick="showSection('home')">🏠 Home</a>
-    <a href="#" onclick="showSection('about')">ℹ️ About</a>
-    <a href="#" onclick="showSection('contact')">📧 Contact</a>
+    <a href="javascript:void(0)" onclick="showSection('home')">🏠 Home</a>
+    <a href="javascript:void(0)" onclick="showSection('about')">ℹ️ About</a>
+    <a href="javascript:void(0)" onclick="showSection('contact')">📧 Contact</a>
   </nav>
 
-  <!-- Main container -->
+  <!-- Main Layout -->
   <div class="main-container">
+    
     <!-- Sidebar -->
     <aside class="slide-menu">
-      <h3>📋 Exercises</h3>
+      <h3>📋 Menu</h3>
       <ul>
         <li>
-          <span onclick="toggleTree('ex2')">👤 Student Basics ▸</span>
+          <span onclick="toggleTree('ex2')">👤 Student Basics ▾</span>
           <ul id="ex2" class="nested">
-            <li><a href="#" onclick="showSection('variablesDemo')">Student Info</a></li>
-            <li><a href="#" onclick="showSection('calcDemo')">Fees Calculator</a></li>
-            <li><a href="#" onclick="showSection('loopsDemo')">Class Hours</a></li>
-            <li><a href="#" onclick="showSection('attendanceDemo')">Attendance Tracker</a></li>
-            <li><a href="#" onclick="showSection('subjectDemo')">Subject List</a></li>
-            <li><a href="#" onclick="showSection('gpaDemo')">GPA Calculator</a></li>
-            <li><a href="#" onclick="showSection('studyTimer')">Study Timer</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('variablesDemo')">Student Info</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('calcDemo')">Fees Calculator</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('loopsDemo')">Class Schedule</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('studyTimer')">Study Timer</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('gpaDemo')">GPA Calculator</a></li>
           </ul>
         </li>
         <li>
-          <span onclick="toggleTree('ex3')">🛠️ Tools ▸</span>
+          <span onclick="toggleTree('ex3')">🛠️ Tools ▾</span>
           <ul id="ex3" class="nested">
-            <li><a href="#" onclick="showSection('calculator')">Scientific Calculator</a></li>
-            <li><a href="#" onclick="showSection('bgColor')">Background Color</a></li>
-            <li><a href="#" onclick="showSection('darkMode')">Dark Mode</a></li>
-            <li><a href="#" onclick="showSection('listAdd')">Add School Item</a></li>
-            <li><a href="#" onclick="showSection('reminders')">Reminder Manager</a></li>
-            <li><a href="#" onclick="showSection('charCount')">Study Notes</a></li>
-            <li><a href="#" onclick="showSection('imageChange')">Change Profile</a></li>
-            <li><a href="#" onclick="showSection('todo')">To-Do List</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('calculator')">Scientific Calc</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('bgColor')">Background Color</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('darkMode')">Dark Mode</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('charCount')">Study Notes</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('listAdd')">Add School Item</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('reminders')">Reminders</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('todo')">To-Do List</a></li>
           </ul>
         </li>
         <li>
-          <span onclick="toggleTree('ex4')">📊 Grades ▸</span>
+          <span onclick="toggleTree('ex4')">📊 Grades ▾</span>
           <ul id="ex4" class="nested">
-            <li><a href="#" onclick="showSection('gradeCalc')">Grade Calculator</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('gradeCalc')">Grade Calculator</a></li>
           </ul>
         </li>
       </ul>
@@ -64,31 +63,24 @@
 
     <!-- Content Area -->
     <main class="content-area">
-      <!-- Content Sections -->
+      
+      <!-- HOME -->
       <section class="content active" id="home">
         <div class="welcome-card">
           <h2>✨ Welcome to StudySpace 2026!</h2>
-          <p>Your all-in-one student productivity hub with calculators, timers, trackers, and more!</p>
+          <p>Your all-in-one student productivity hub.</p>
           <div class="feature-grid">
-            <div class="feature-card">
-              <h3>🧮 Scientific Calculator</h3>
-              <p>Advanced math functions including sin, cos, log, factorial & more</p>
-            </div>
-            <div class="feature-card">
-              <h3>📊 Grade Calculator</h3>
-              <p>Dynamic quizzes, exams, projects with letter grades</p>
-            </div>
-            <div class="feature-card">
-              <h3>⏱️ Study Timer</h3>
-              <p>Pomodoro-style focus sessions</p>
-            </div>
+            <div class="feature-card"><h3>🧮 Calculator</h3><p>Advanced math functions</p></div>
+            <div class="feature-card"><h3>📊 Grades</h3><p>Dynamic grade calculation</p></div>
+            <div class="feature-card"><h3>⏱️ Timer</h3><p>Pomodoro focus sessions</p></div>
           </div>
         </div>
       </section>
 
-      <section class="content" id="about" style="display:none;">
+      <!-- ABOUT -->
+      <section class="content" id="about">
         <h2>ℹ️ About StudySpace</h2>
-        <p>This comprehensive student dashboard helps you manage academics, track progress, and stay organized.</p>
+        <p>A comprehensive student dashboard to manage academics and stay organized.</p>
         <div class="stats-grid">
           <div class="stat-box">7+ Tools</div>
           <div class="stat-box">100% Free</div>
@@ -96,77 +88,85 @@
         </div>
       </section>
 
-      <section class="content" id="contact" style="display:none;">
+      <!-- CONTACT -->
+      <section class="content" id="contact">
         <h2>📧 Contact</h2>
         <p><strong>Email:</strong> studyspace@example.com</p>
         <p><strong>Support:</strong> Available 24/7</p>
       </section>
 
       <!-- STUDENT BASICS -->
-      <section class="content" id="variablesDemo" style="display:none;">
+      <section class="content" id="variablesDemo">
         <h2>👤 Student Information</h2>
         <div class="info-card">
           <p><strong>Name:</strong> <span id="studentName">John Doe</span></p>
           <p><strong>Age:</strong> <span id="studentAge">20</span></p>
-          <p><strong>Student ID:</strong> <span id="studentId">STU2024001</span></p>
+          <p><strong>ID:</strong> <span id="studentId">STU2024001</span></p>
         </div>
         <button class="btn-primary" onclick="updateStudent()">✏️ Update Info</button>
       </section>
 
-      <section class="content" id="calcDemo" style="display:none;">
+      <section class="content" id="calcDemo">
         <h2>💰 Fees Calculator</h2>
         <div class="input-group">
-          <input type="number" id="tuition" placeholder="Tuition Fee ($)" min="0" step="0.01">
-          <input type="number" id="misc" placeholder="Miscellaneous ($)" min="0" step="0.01">
+          <input type="number" id="tuition" placeholder="Tuition Fee ($)">
+          <input type="number" id="misc" placeholder="Miscellaneous ($)">
         </div>
         <button class="btn-primary" onclick="calcFees()">Calculate Total</button>
         <div id="feesResult" class="result-card"></div>
       </section>
 
-      <section class="content" id="loopsDemo" style="display:none;">
+      <section class="content" id="loopsDemo">
         <h2>📅 Weekly Class Schedule</h2>
         <div class="schedule-grid">
-          <div class="day-card">
-            <h3>Monday</h3>
-            <p>8:00 AM - 12:00 PM<br>Mathematics</p>
-          </div>
-          <div class="day-card">
-            <h3>Tuesday</h3>
-            <p>1:00 PM - 5:00 PM<br>Science</p>
-          </div>
-          <div class="day-card">
-            <h3>Wednesday</h3>
-            <p>8:00 AM - 12:00 PM<br>History</p>
-          </div>
-          <div class="day-card">
-            <h3>Thursday</h3>
-            <p>1:00 PM - 5:00 PM<br>English</p>
-          </div>
-          <div class="day-card">
-            <h3>Friday</h3>
-            <p>8:00 AM - 12:00 PM<br>Computer Science</p>
-          </div>
+          <div class="day-card"><h3>Mon</h3><p>Math<br>8am-12pm</p></div>
+          <div class="day-card"><h3>Tue</h3><p>Science<br>1pm-5pm</p></div>
+          <div class="day-card"><h3>Wed</h3><p>History<br>8am-12pm</p></div>
+          <div class="day-card"><h3>Thu</h3><p>English<br>1pm-5pm</p></div>
+          <div class="day-card"><h3>Fri</h3><p>Computer<br>8am-12pm</p></div>
         </div>
       </section>
 
+      <section class="content" id="studyTimer">
+        <h2>⏱️ Study Timer (Pomodoro)</h2>
+        <div class="timer-display">
+          <span id="timer">25:00</span>
+        </div>
+        <div class="timer-controls">
+          <button class="btn-primary" onclick="startTimer()">Start</button>
+          <button class="btn-secondary" onclick="pauseTimer()">Pause</button>
+          <button class="btn-danger" onclick="resetTimer()">Reset</button>
+        </div>
+      </section>
+
+      <section class="content" id="gpaDemo">
+        <h2>🎓 GPA Calculator</h2>
+        <div id="gpaInputs">
+          <div class="gpa-row">
+            <input type="text" placeholder="Subject" class="subject">
+            <input type="number" placeholder="Credits" class="credits" min="1" max="6">
+            <input type="number" placeholder="Grade (0-100)" class="grade" min="0" max="100">
+          </div>
+        </div>
+        <button class="btn-secondary" onclick="addGpaRow()">+ Add Subject</button>
+        <button class="btn-primary" onclick="calcGpa()">Calculate GPA</button>
+        <div id="gpaResult" class="result-card"></div>
+      </section>
+
       <!-- TOOLS -->
-      <section class="content" id="calculator" style="display:none;">
+      <section class="content" id="calculator">
         <h2>🧮 Scientific Calculator</h2>
         <div class="calculator-container">
           <input type="text" id="calcScreen" readonly placeholder="0">
           <div class="calc-grid">
-            <button class="calc-btn function" onclick="press('sin(')">sin</button>
-            <button class="calc-btn function" onclick="press('cos(')">cos</button>
-            <button class="calc-btn function" onclick="press('tan(')">tan</button>
+            <button class="calc-btn function" onclick="press('Math.sin(')">sin</button>
+            <button class="calc-btn function" onclick="press('Math.cos(')">cos</button>
+            <button class="calc-btn function" onclick="press('Math.tan(')">tan</button>
             <button class="calc-btn function" onclick="press('Math.log10(')">log</button>
             <button class="calc-btn function" onclick="press('Math.log(')">ln</button>
             <button class="calc-btn function" onclick="press('Math.sqrt(')">√</button>
-            <button class="calc-btn function" onclick="press('Math.pow(')">xʸ</button>
-            <button class="calc-btn function" onclick="press('!')">n!</button>
-            <button class="calc-btn" onclick="press('(')">(</button>
-            <button class="calc-btn" onclick="press(')')">)</button>
-            <button class="calc-btn" onclick="press('Math.PI')">π</button>
-            <button class="calc-btn" onclick="press('Math.E')">e</button>
+            <button class="calc-btn function" onclick="press('Math.PI')">π</button>
+            <button class="calc-btn function" onclick="press('Math.pow(')">xⁿ</button>
             <button class="calc-btn" onclick="press('7')">7</button>
             <button class="calc-btn" onclick="press('8')">8</button>
             <button class="calc-btn" onclick="press('9')">9</button>
@@ -181,54 +181,87 @@
             <button class="calc-btn op" onclick="press('-')">-</button>
             <button class="calc-btn zero" onclick="press('0')">0</button>
             <button class="calc-btn" onclick="press('.')">.</button>
+            <button class="calc-btn" onclick="press(')')">)</button>
             <button class="calc-btn op" onclick="press('+')">+</button>
-            <button class="calc-btn backspace" onclick="press('⌫')">⌫</button>
             <button class="calc-btn clear" onclick="clearScreen()">C</button>
-            <button class="calc-btn equals" onclick="calculate()" rowspan="2" style="grid-row: span 2;">=</button>
+            <button class="calc-btn equals" onclick="calculate()">=</button>
           </div>
         </div>
-        <div class="calc-examples">
-          <p><strong>Try these:</strong> sin(30), 5!, sqrt(16), π*2, 2^3</p>
-        </div>
       </section>
 
-      <!-- Other tool sections... -->
-      <section class="content" id="bgColor" style="display:none;">
+      <section class="content" id="bgColor">
         <h2>🎨 Background Color Changer</h2>
         <button id="bgBtn" class="btn-primary btn-large">🎲 Change Background</button>
-        <p>Click to get a random soothing color!</p>
+        <p>Click for a random soothing color!</p>
       </section>
 
-      <section class="content" id="darkMode" style="display:none;">
+      <section class="content" id="darkMode">
         <h2>🌙 Dark Mode Toggle</h2>
         <button id="darkBtn" class="btn-primary btn-large">Toggle Dark Mode</button>
-        <p>Switch between light and dark themes instantly!</p>
+        <p>Switch between light and dark themes!</p>
       </section>
 
-      <!-- Grade Calculator -->
-      <section class="content" id="gradeCalc" style="display:none;">
+      <section class="content" id="charCount">
+        <h2>📝 Study Notes</h2>
+        <textarea id="essayInput" placeholder="Type your study notes here..." rows="6"></textarea>
+        <p id="charCount">Characters: 0</p>
+      </section>
+
+      <section class="content" id="listAdd">
+        <h2>📚 Add School Item</h2>
+        <div class="input-group">
+          <input type="text" id="itemInput" placeholder="Enter item name">
+        </div>
+        <button class="btn-primary" onclick="addItem()">Add Item</button>
+        <ul id="schoolList"></ul>
+      </section>
+
+      <section class="content" id="reminders">
+        <h2>🔔 Reminder Manager</h2>
+        <div class="input-group">
+          <input type="text" id="reminderInput" placeholder="Enter reminder">
+        </div>
+        <button class="btn-primary" onclick="addReminder()">Add Reminder</button>
+        <ul id="reminderList"></ul>
+      </section>
+
+      <section class="content" id="todo">
+        <h2>✅ To-Do List</h2>
+        <div class="input-group">
+          <input type="text" id="todoTask" placeholder="Task">
+          <select id="todoPriority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="addTodo()">Add Task</button>
+        <ul id="todoList"></ul>
+      </section>
+
+      <!-- GRADES -->
+      <section class="content" id="gradeCalc">
         <h2>📊 Dynamic Grade Calculator</h2>
         <div class="grade-section">
           <h3>📝 Quiz Scores</h3>
           <button class="btn-secondary" onclick="addQuizInput()">+ Add Quiz</button>
-          <div id="quizInputs" class="input-grid"></div>
+          <div id="quizInputs"></div>
         </div>
         <div class="grade-section">
           <h3>📚 Exam Score</h3>
-          <input type="number" id="exam" placeholder="Exam (0-100)" min="0" max="100" step="0.1">
+          <input type="number" id="exam" placeholder="Exam (0-100)">
         </div>
         <div class="grade-section">
           <h3>💻 Project Score</h3>
-          <input type="number" id="project" placeholder="Project (0-100)" min="0" max="100" step="0.1">
+          <input type="number" id="project" placeholder="Project (0-100)">
         </div>
         <div class="button-group">
           <button class="btn-primary" onclick="calculateGrade()">Calculate Grade</button>
           <button class="btn-danger" onclick="resetQuiz()">Reset All</button>
         </div>
-        <div id="gradeResult" class="result-card large"></div>
+        <div id="gradeResult" class="result-card"></div>
       </section>
 
-      <!-- Add other sections as needed... -->
     </main>
   </div>
 
